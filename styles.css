@@ -7,8 +7,8 @@
   --accent: #6ee7ff;
   --danger: #ff6b6b;
   --ok: #7cff9b;
-  --radius: 12px; /* Slightly tighter radius for a modern feel */
-  --input-height: 44px; /* Consistent height for inputs and buttons */
+  --radius: 12px;
+  --input-height: 44px; 
 }
 
 * {
@@ -44,10 +44,9 @@ header p {
   font-size: 0.95rem;
 }
 
-/* Grid Layout Improvements */
 .grid {
   display: grid;
-  gap: 24px; /* Increased gap for better breathing room */
+  gap: 24px; 
   grid-template-columns: 1fr;
   padding-bottom: 40px;
 }
@@ -59,12 +58,11 @@ header p {
   }
 }
 
-/* Consistent Card Styling */
 .card {
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 24px; /* Balanced inner padding */
+  padding: 24px; 
   display: flex;
   flex-direction: column;
 }
@@ -96,7 +94,6 @@ label {
   margin-left: 4px;
 }
 
-/* Unified Input Design */
 input {
   height: var(--input-height);
   padding: 0 16px;
@@ -116,7 +113,6 @@ input:focus {
   box-shadow: 0 0 0 3px rgba(110, 231, 255, 0.1);
 }
 
-/* Button Refinement */
 .actions {
   display: flex;
   gap: 12px;
@@ -147,7 +143,6 @@ button.secondary {
   background: rgba(255, 255, 255, 0.05);
 }
 
-/* Table & Summary Balance */
 .tableWrap {
   overflow: auto;
   border-radius: 8px;
@@ -177,7 +172,6 @@ tbody td {
   font-size: 0.9rem;
 }
 
-/* Consistent Summary Box Heights */
 .summary {
   margin-top: 24px;
   display: grid;
@@ -241,4 +235,5 @@ tbody td {
   text-align: center;
   border-top: 1px solid var(--line);
   opacity: 0.6;
+
 }
