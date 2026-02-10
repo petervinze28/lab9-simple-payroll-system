@@ -1,0 +1,244 @@
+:root {
+  --bg: #0b1020;
+  --card: rgba(255, 255, 255, .06);
+  --line: rgba(255, 255, 255, .12);
+  --text: #eaf0ff;
+  --muted: rgba(234, 240, 255, .70);
+  --accent: #6ee7ff;
+  --danger: #ff6b6b;
+  --ok: #7cff9b;
+  --radius: 12px; /* Slightly tighter radius for a modern feel */
+  --input-height: 44px; /* Consistent height for inputs and buttons */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.container {
+  width: min(1200px, 94vw);
+  margin: 0 auto;
+}
+
+header {
+  padding: 40px 0 20px;
+  text-align: left;
+}
+
+header h1 {
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+header p {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Grid Layout Improvements */
+.grid {
+  display: grid;
+  gap: 24px; /* Increased gap for better breathing room */
+  grid-template-columns: 1fr;
+  padding-bottom: 40px;
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: 360px 1fr;
+    align-items: start;
+  }
+}
+
+/* Consistent Card Styling */
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px; /* Balanced inner padding */
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  margin: 0 0 20px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.row {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.row.two {
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--muted);
+  margin-left: 4px;
+}
+
+/* Unified Input Design */
+input {
+  height: var(--input-height);
+  padding: 0 16px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: rgba(0, 0, 0, .25);
+  color: var(--text);
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: rgba(0, 0, 0, .4);
+  box-shadow: 0 0 0 3px rgba(110, 231, 255, 0.1);
+}
+
+/* Button Refinement */
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+button {
+  height: var(--input-height);
+  flex: 1;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  padding: 0 20px;
+  background: linear-gradient(135deg, rgba(110, 231, 255, 0.2), rgba(167, 139, 250, 0.2));
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  filter: brightness(1.2);
+  transform: translateY(-1px);
+  border-color: var(--accent);
+}
+
+button.secondary {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Table & Summary Balance */
+.tableWrap {
+  overflow: auto;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: rgba(0, 0, 0, .1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+
+thead th {
+  text-align: left;
+  padding: 14px 16px;
+  color: var(--muted);
+  background: rgba(0, 0, 0, .2);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+tbody td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.9rem;
+}
+
+/* Consistent Summary Box Heights */
+.summary {
+  margin-top: 24px;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (min-width: 720px) {
+  .summary {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.sumBox {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sumBox .label {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.sumBox .value {
+  margin: 4px 0 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.sumBox.highlight {
+  border-color: var(--ok);
+  background: rgba(124, 255, 155, 0.05);
+}
+
+.sumBox.highlight .value {
+  color: var(--ok);
+}
+
+.dangerTop {
+  margin-top: 20px;
+  align-self: flex-start;
+  color: var(--danger);
+  border-color: rgba(255, 107, 107, 0.2);
+}
+
+.dangerTop:hover {
+  background: rgba(255, 107, 107, 0.1);
+  border-color: var(--danger);
+}
+
+.footer {
+  padding: 24px 0 40px;
+  text-align: center;
+  border-top: 1px solid var(--line);
+  opacity: 0.6;
+}
